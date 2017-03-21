@@ -9,6 +9,7 @@ import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import AdminButton from 'admin-poc';
 
 import { makeSelectRepos, makeSelectLoading, makeSelectError } from 'containers/App/selectors';
 import H2 from 'components/H2';
@@ -41,6 +42,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
       repos,
     };
 
+    console.log(AdminButton);
     return (
       <article>
         <Helmet
@@ -51,6 +53,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
         />
         <div>
           <CenteredSection>
+            <AdminButton>Button from other repo</AdminButton>
             <H2>
               <FormattedMessage {...messages.startProjectHeader} />
             </H2>
