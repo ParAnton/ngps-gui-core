@@ -1,6 +1,6 @@
 import React from 'react';
 
-class AdminWrapper extends React.component {
+class AdminWrapper extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div>
@@ -12,7 +12,7 @@ class AdminWrapper extends React.component {
 }
 
 AdminWrapper.propTypes = {
-  children: React.propTypes.array,
+  children: React.PropTypes.object,
 };
 
 export default AdminWrapper;
