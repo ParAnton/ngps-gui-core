@@ -45,6 +45,8 @@ import './global-styles';
 // Import routes
 import createRoutes from './routes';
 
+import debugRoutes from './debugRoutes';
+
 // Observe loading of Open Sans (to remove open sans, remove the <link> tag in
 // the index.html file and this observer)
 const openSansObserver = new FontFaceObserver('Open Sans', {});
@@ -70,10 +72,15 @@ const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: makeSelectLocationState(),
 });
 
+const routes = createRoutes(store);
+/* istanbul ignore next */
+debugRoutes(routes);
+
+
 // Set up the router, wrapping all Routes in the App component
 const rootRoute = {
   component: App,
-  childRoutes: createRoutes(store),
+  childRoutes: routes,
 };
 
 const render = (messages) => {

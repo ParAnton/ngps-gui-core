@@ -1,7 +1,4 @@
-// These are the pages you can go to.
-// They are all wrapped in the App component, which should contain the navbar etc
-// See http://blog.mxstbr.com/2016/01/react-apps-with-pages for more information
-// about the code splitting business
+import adminChildRoutes from 'admin-poc/dist/routes';
 import { getAsyncInjectors } from './utils/asyncInjectors';
 
 const errorLoading = (err) => {
@@ -48,12 +45,13 @@ export default function createRoutes(store) {
       },
     }, {
       path: '/admin',
-      name: 'features',
+      name: 'admin',
       getComponent(nextState, cb) {
-        import('admin-poc')
+        import('containers/AdminWrapper')
           .then(loadModule(cb))
           .catch(errorLoading);
       },
+      childRoutes: adminChildRoutes,
     }, {
       path: '*',
       name: 'notfound',
