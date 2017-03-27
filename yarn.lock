@@ -43,13 +43,13 @@ acorn@^3.0.4:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-3.3.0.tgz#45e37fb39e8da3f25baee3ff5369e2bb5f22017a"
 
-acorn@^4.0.1, acorn@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.3.tgz#1a3e850b428e73ba6b09d1cc527f5aaad4d03ef1"
-
-acorn@^4.0.11:
+acorn@^4.0.1, acorn@^4.0.11:
   version "4.0.11"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.11.tgz#edcda3bd937e7556410d42ed5860f67399c794c0"
+
+acorn@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.3.tgz#1a3e850b428e73ba6b09d1cc527f5aaad4d03ef1"
 
 "admin-poc@file:../admin-poc":
   version "1.0.3"
@@ -4672,7 +4672,7 @@ lock@^0.1.2:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/lock/-/lock-0.1.3.tgz#f66c1caa0c41956e1426608039ed59b71bdf1854"
 
-lodash-es@^4.2.1:
+lodash-es@^4.2.0, lodash-es@^4.2.1:
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.2.tgz#59011b585166e613eb9dd5fc256b2cd1a30f3712"
 
@@ -4909,11 +4909,11 @@ lodash.templatesettings@^3.0.0:
     lodash._reinterpolate "^3.0.0"
     lodash.escape "^3.0.0"
 
-lodash@4.17.2, lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1:
+lodash@4.17.2, lodash@^4.0.0, lodash@^4.15.0, lodash@^4.16.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.6.1:
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
 
-lodash@^4.17.4:
+lodash@^4.14.0, lodash@^4.17.4, lodash@^4.3.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -6263,6 +6263,10 @@ react-intl@2.1.5:
     intl-relativeformat "^1.3.0"
     invariant "^2.1.1"
 
+react-loadable@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-loadable/-/react-loadable-3.0.1.tgz#d285d0f32680fef3cf7c1fd8853206415f824ad8"
+
 react-proxy@^1.1.7:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/react-proxy/-/react-proxy-1.1.8.tgz#9dbfd9d927528c3aa9f444e4558c37830ab8c26a"
@@ -6277,6 +6281,16 @@ react-redux@4.4.6:
     hoist-non-react-statics "^1.0.3"
     invariant "^2.0.0"
     lodash "^4.2.0"
+    loose-envify "^1.1.0"
+
+react-redux@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.3.tgz#86c3b68d56e74294a42e2a740ab66117ef6c019f"
+  dependencies:
+    hoist-non-react-statics "^1.0.3"
+    invariant "^2.0.0"
+    lodash "^4.2.0"
+    lodash-es "^4.2.0"
     loose-envify "^1.1.0"
 
 react-router-redux@4.0.6:
@@ -6476,7 +6490,7 @@ redux-saga@0.14.0:
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.14.0.tgz#7792bcc9dc57e9ed2484daa95794b154ee472b24"
 
-redux@3.6.0:
+redux@3.6.0, redux@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/redux/-/redux-3.6.0.tgz#887c2b3d0b9bd86eca2be70571c27654c19e188d"
   dependencies:

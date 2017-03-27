@@ -13,6 +13,11 @@ function Img(props) {
   );
 }
 
+Img.defaultProps = {
+  src: 'bild.jsp',
+  alt: 'alt',
+};
+
 // We require the use of src and alt, only enforced by react in dev mode
 Img.propTypes = {
   src: PropTypes.oneOfType([

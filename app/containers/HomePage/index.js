@@ -12,7 +12,7 @@ import { createStructuredSelector } from 'reselect';
 
 import { makeSelectRepos, makeSelectLoading, makeSelectError } from 'containers/App/selectors';
 import H2 from 'components/H2';
-import ReposList from 'components/ReposList';
+import Loadable from 'react-loadable';
 import Button from '../../components/Button';
 import AtPrefix from './AtPrefix';
 import CenteredSection from './CenteredSection';
@@ -23,6 +23,30 @@ import messages from './messages';
 import { loadRepos } from '../App/actions';
 import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
+
+
+const MyLoadingComponent = ({ isLoading, error, pastDelay }) => {
+  if (isLoading) {
+    return pastDelay ? <div>Loading...</div> : null; // Don't flash "Loading..." when we don't need to.
+  } else if (error) {
+    return <div>Error! Component failed to load</div>;
+  }
+  return null;
+};
+
+MyLoadingComponent.propTypes = {
+  isLoading: React.PropTypes.bool,
+  error: React.PropTypes.string,
+  pastDelay: React.PropTypes.number,
+};
+
+const ReposListLoadable = Loadable({
+  loader: () => import('components/ReposList'),
+  LoadingComponent: MyLoadingComponent,
+  delay: 200,
+  //webpackRequireWeakId: () => require.resolveWeak('components/ReposList'),
+  // optional options...
+});
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   /**
@@ -41,6 +65,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
       error,
       repos,
     };
+
 
     console.log(Button);
     return (
@@ -80,7 +105,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
                 />
               </label>
             </Form>
-            <ReposList {...reposListProps} />
+            { reposListProps.repos !== false && <ReposListLoadable {...reposListProps} />}
           </Section>
         </div>
       </article>
